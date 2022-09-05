@@ -13,14 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return ('Selamat Datang');
-});
-
-Route::get('/about', function () {
-    return ('NIM : 2241727012 <br> Nama : Fajriyah Mayzura Agustin <br> Kelas : TSA WEB B');
-});
-
-Route::get('/articles/{id}', function ($id) {
-    return ('Halaman Artikel ini dengan id'.$id);
-});
+Route::get('/', [PageController::class, 'index']);
+Route::get('/about', [App\Http\Controllers\PageController::class, 'about']);
+Route::get('/articles/{id}', [App\Http\Controllers\PageController::class, 'articles']);
