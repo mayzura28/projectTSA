@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
-class ArticleController extends Controller
+class ProgramController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -44,8 +45,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
-        return 'Halaman Artikel ini dengan id'.$id;
+        return '<a href="https://www.educastudio.com/program/'. $id .'">
+        https://www.educastudio.com/program/'. $id .'</a>';
     }
 
     /**

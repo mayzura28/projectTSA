@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
-class ArticleController extends Controller
+class ContactUsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,7 +13,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        return '<a href="https://www.educastudio.com/contact-us">
+        https://www.educastudio.com/contact-us</a>';
     }
 
     /**
@@ -45,7 +47,6 @@ class ArticleController extends Controller
     public function show($id)
     {
         //
-        return 'Halaman Artikel ini dengan id'.$id;
     }
 
     /**
