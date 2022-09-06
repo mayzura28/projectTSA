@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
-class ArticleController extends Controller
+class NewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +43,11 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-        return 'Halaman Artikel ini dengan id'.$id;
+    public function show($id = null){
+        if ($id = null) 
+            return '<a href="https://educastudio.com/news">https://educastudio.com/news</a>';
+            return '<a href="https://www.educastudio.com/news'.$id.'">
+            https://www.educastudio.com/news'.$id.'</a>';            
     }
 
     /**

@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController2;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ContactUsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +27,20 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 
 Route::get('/about', [App\Http\Controllers\AboutController::class, 'index']);
 
-Route::get('/article/{id}', [App\Http\Controllers\ArticleController::class, 'index']);
+Route::get('/article/{id}', [App\Http\Controllers\ArticleController::class, 'show']);
+
+Route::get('/home', [HomeController2::class, 'index']);
+
+Route::prefix('category')->group(function(){
+    Route::get('/{id}', [ProductsController::class, 'index']);
+});
+
+Route::get('/news/{id?}', [NewsController::class, 'show']);
+
+Route::prefix('program')->group(function(){
+    Route::get('/{id}', [ProgramController::class, 'show']);
+});
+
+Route::get('/aboutus', [AboutUsController::class, 'index']);
+
+Route::resource('/contactus', ContactUsController::class);
